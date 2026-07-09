@@ -1,0 +1,85 @@
+body {
+    background: hsl(30, 38%, 92%);
+
+}
+
+main {
+    background: #fff;
+    display: flex;
+    width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 430px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.left {
+    background: #fff;
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+}
+
+.info {
+    padding: 20px;
+}
+
+h3 {
+    color: hsl(228, 12%, 48%);
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+p {
+    color: hsl(228, 12%, 48%);
+}
+
+strong {
+    font-size: xx-large;
+    color: hsl(158, 36%, 37%);
+    margin-right: 20px;
+}
+
+del {
+    color: hsl(228, 12%, 48%);
+
+}
+
+.visuals {
+    display: flex;
+    align-items: center;
+}
+
+button{
+    background: hsl(158, 36%, 37%);
+    color: #fff;
+    font-weight: 800;
+    width: 100%;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    padding: 10px ;
+    border-radius: 10px;
+}
+
+.cart{
+    width: 13px;
+    height: 13px;
+    margin-right:5px ;
+}
