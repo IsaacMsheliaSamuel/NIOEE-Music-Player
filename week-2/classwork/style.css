@@ -1,0 +1,19 @@
+.btn {
+    text-decoration: none;
+    color: white;
+    background: #04AA6D;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100px;
+    /* margin: auto; */
+}
+
+.btn-wrapper {
+    background: #000;
+    height: 200px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
