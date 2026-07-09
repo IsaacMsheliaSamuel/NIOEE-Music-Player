@@ -1,0 +1,18 @@
+body{background-color: lightblue; font-family: 'Times New Roman', Times, serif, sans-serif;}
+h1 {text-align: center; color:navy;}
+img{width: 200px; border: 4px solid navy;}
+img{width: 200px; border: 4px solid navy; border-radius: 50%;}
+img{display: block; margin: auto;}
+h2{margin-top: 30px;}
+p{color:#444444; line-height: 1.6;}
+h2{color: darkblue;}
+blockquote{color: darkgreen;}
+p{color: #444444;}
+img{margin-bottom: 20px;}
+p{padding: 10px;}
+blockquote{
+    background-color: white;
+    width: 35%;
+    padding: 15px;
+    border-left: 5px solid navy;
+    font-style: italic;}
