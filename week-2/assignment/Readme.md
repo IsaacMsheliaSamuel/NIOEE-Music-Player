@@ -12,17 +12,14 @@ The design file is attached to this folder. Your goal is to reproduce it as accu
 
 1. Navigate to the `week-2` folder.
 2. Inside it, create a folder named `submissions` if it doesn't already exist.
-3. Inside the `submissions` folder, create a new folder using your name in the format:
-
-```text
-firstname-lastname
-```
+3. Inside the `submissions` folder, create index.html and style.css
 
 **Example:**
 
 ```text
 submissions/
-└── john-danlami/
+└── index.html
+└── style.css
 ```
 
 4. Place all of your assignment files inside your personal folder.
