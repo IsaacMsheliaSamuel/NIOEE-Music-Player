@@ -4,7 +4,7 @@
 
 Recreate the provided design using **HTML** and **CSS** only.
 
-The design file is attached to this folder. Your goal is to reproduce it as accurately as possible, paying attention to the layout, spacing, colors, typography, and responsiveness.
+The design file is attached to this folder. Your goal is to reproduce it as accurately as possible, paying attention to the layout, spacing, colors.
 
 ---
 
