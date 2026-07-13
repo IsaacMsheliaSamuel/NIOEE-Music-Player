@@ -1,0 +1,37 @@
+.Header {
+    background-color: #3b2d05;
+    font-size: 48px;
+    font-weight: bold;
+    height: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Middle {
+    font-size: 24px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}       
+.Footer {
+    background-color: #3b2d05;
+    font-size: 24px;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.One {
+    background-color: #e6e6e6;
+    width: 30%;
+    height: 100%;
+}
+.Two{
+    background-color: #f2f2f2;
+    width: 70%;
+    height: 100%;
+    align-items: center; 
+}
