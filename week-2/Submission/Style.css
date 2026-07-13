@@ -9,13 +9,32 @@
     justify-content: center;
 }
 .Middle {
-    font-size: 24px;
     height: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
 }       
-.Footer {
+.One {
+    background-color: #e6e6e6;
+    width: 30%;
+    height: 400px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+.Two{
+    background-color: #f2f2f2;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+footer {
     background-color: #3b2d05;
     font-size: 24px;
     height: 100px;
@@ -23,15 +42,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.One {
-    background-color: #e6e6e6;
-    width: 30%;
-    height: 100%;
-}
-.Two{
-    background-color: #f2f2f2;
-    width: 70%;
-    height: 100%;
-    align-items: center; 
 }
