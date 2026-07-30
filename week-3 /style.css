@@ -1,0 +1,43 @@
+.first {
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    margin-left: 40%;
+    padding: 0px;
+}
+h1{
+    background-color: yellow;
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid black;
+}
+p{
+    background-color: aqua;
+    margin: 0px;
+    padding: 0px;
+}
+/* .second {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+} */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    gap: 20px;
+    
+}
+.one {
+    width: 250px;
+    height: 200px;
+    background-color: black;
+}
+
+.two {
+    width: 250px;
+    height: 200px;
+    background-color: blue;
+}
