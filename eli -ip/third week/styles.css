@@ -1,0 +1,40 @@
+
+body{
+    border: 2px;
+    background: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items:right  ;
+    
+    
+   
+} 
+.text{
+    border: 3px;
+    display: flex;
+    align-items: right; 
+    padding-top: 100px;
+    justify-content: space-evenly;
+    font-style: bold;
+    font-size: smaller;
+    font-weight: bolder;
+    column-gap: 100px;
+    color: blue;
+}
+.header{
+    font-style: bold; 
+    font-size: x-large;
+    
+
+}
+
+
+
+    
+
+    
+
+
+
+    
+
