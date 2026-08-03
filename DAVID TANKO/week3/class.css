@@ -1,0 +1,124 @@
+/* THE PROBLEM I FACED IS ALIGNMENT OF NUMBERS WITH THE STEPS ON THE SIDEBAR*/
+main{
+  border: 6px solid rgb(255, 250, 250);
+  border-radius: 10px;
+    width: 790px;
+    height:500px ;
+    margin: 30px;
+    margin-left: 27%;
+    margin-top: 5%;
+    display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background-color: white;
+}
+body{
+    background-color: rgb(188, 188, 189);
+}
+.sidebar{
+width: 29%;
+height: 100%;
+background-color: #42537a;
+border: 6px solid white;
+border-radius: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.text_section{
+margin-top: 18.5px;
+margin-bottom: 0px;
+height: 100px;
+}
+.guide h5{
+margin-bottom: 0;
+color: rgb(188, 188, 189);
+gap: 10px;
+
+}
+.guide p{
+margin-top: 0;
+color: white;
+font-size: 15px;
+}
+.personalinfo{
+width: 60%;
+height: 95%;
+background-color: white;
+border: 6px solid white;
+border-radius: 10px;
+padding-top: 15px;
+}
+h1{
+    color: rgb(68, 68, 190);
+}
+p{
+    color: rgba(102, 102, 202, 0.644);
+}
+input{
+    color: rgba(102, 102, 202, 0.74);
+    width: 360px;
+    height: 24px;
+    border: 0.5px solid rgba(102, 102, 202, 0.74);
+    border-radius: 4px;
+}
+label{
+    color:rgba(100, 100, 247, 0.884) ;
+}
+.container{
+margin: 100px;
+  padding-left: 190px;
+    
+}
+.next_step{
+    height: 30px;
+    background-color: rgb(68, 68, 190);
+    border: 2px solid rgba(102, 102, 202, 0.74);
+    border-radius: 4px;
+    padding-bottom: 900;
+
+
+}
+a{
+    text-decoration: none;
+ color: white;
+ text-align: center;
+}
+.button1{
+    width: 23px;
+    height: 23px;
+    background-color: #42537a;
+    border: 0.5px solid rgb(188, 188, 189) ;
+    border-radius: 50%;
+    margin: 20px;
+
+}
+.button_section{
+margin-top: 18.5px;
+margin-bottom: 0px;
+align-items: self-start;
+}
+.circle_btn1{
+    margin-top: 12px;
+    height: 50px;
+    background-color: rgba(102, 102, 202, 0.644);
+}
+.circle_btn2{
+    margin-top: 12px;
+    bottom: 9px;
+    height: 50px;
+}
+.circle_btn3{
+    margin-top: 12px;
+    margin-bottom: 0px;
+    height: 100px;
+}
+.circle_btn4{
+    margin-top: 12px;
+    size: 50px;
+}
+.content{
+  align-items: self-start;
+}
