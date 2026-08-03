@@ -1,0 +1,58 @@
+body{
+ margin: 0;
+ padding: 0;
+}
+
+p, ol, ul, h3{
+    font-size: 20px;
+}
+
+.profile-pics {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.profile-head{
+    background: rgba(18, 30, 3, 0.71);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.main-section{
+    width: 1400px;
+    margin: auto;
+    
+ .about-me{
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ color: rgb(6, 74, 15);
+   }
+
+
+.list-section{
+    display: flex;
+    gap: 100px;
+.food{
+    font-style: italic;
+}
+
+.hobby{
+    font-style: italic;
+}
+
+}
+
+
+.sub-title{
+    text-align: center;
+}
+
+.goals{
+    text-align: center;
+
+}
