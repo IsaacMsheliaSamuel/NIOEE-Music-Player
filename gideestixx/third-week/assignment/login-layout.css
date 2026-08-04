@@ -1,0 +1,114 @@
+*{
+   box-sizing: border-box;
+   padding: 0%;
+   margin: 0%; 
+}
+main{
+    background-color: bisque;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding: 50px;
+    ;
+}
+.parent{
+    background:linear-gradient(to bottom, #07146a, #ad5e19);
+    height: 82vh;
+    gap: 20px;
+    width: 40vh;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(118, 37, 3, 0.717);
+    
+    
+    
+}
+.firstborn {
+    display: flex;
+    color: white;
+    
+}
+.secondborn{
+    display: flex;
+    color: white;
+}
+.thirdborn{
+    display: flex;
+    color: white;
+}
+.fourthborn{
+    display: flex;
+    color: white;
+}
+.text{
+    padding-left: 30px;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    
+    
+    
+}
+.circle{
+    padding-left: 10px;
+    padding-top: 4%;
+    border-radius: 50%;
+    border:solid 1px white ;
+    width:25px ;
+    height: 25px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    
+     
+}
+input{
+    padding-top:  40px;
+    border-radius: 15px;
+    border:none;
+    width: 95%;
+    padding: 13px;
+    margin-right: 10px;
+    
+    
+}
+section{
+    padding-left: 5%;
+    padding: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    color: #07146a;
+    box-shadow: 0 10px 30px rgba(143, 67, 9, 0.744);
+    
+       
+    gap: 20px;
+    
+    
+     
+    
+    
+}
+.heading{
+    font-style: italic;
+    color: #091561;
+}
+button{
+    width: 80px;
+    height: 30px;
+    background-color:rgb(6, 6, 75);
+    color: aliceblue;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-self: right;
+    justify-content: center;
+    margin: 45px;
+    padding: 2%;
+    
+    
+}
+.para{
+    color: #091561;
+    
+}
