@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi-Step Form Modal</title>
+<style>
+  :root{
+    --purple:#4d3fdb;
+    --purple-dark:#3a2fc4;
+    --peach:#f2a68a;
+    --text-dark:#0b1730;
+    --text-muted:#8f95a3;
+    --border:#e2e4ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e9ebf0;
+    font-family:'Segoe UI',Arial,sans-serif;
+    padding:20px;
+  }
+
+  /* ---- THE MODAL: CSS Grid, 2 columns ---- */
+  .modal{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    max-width:620px;
+    width:100%;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
+  }
+
+  /* ---- Left sidebar panel ---- */
+  .sidebar{
+    background:var(--purple);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3C/svg%3E");
+    position:relative;
+    padding:32px 24px;
+    display:grid;
+    grid-template-rows:repeat(4, auto) 1fr;
+    gap:26px;
+    color:#fff;
+    overflow:hidden;
+  }
+  .step{
+    display:grid;
+    grid-template-columns:32px 1fr;
+    align-items:center;
+    gap:12px;
+  }
+  .step .num{
+    width:32px;height:32px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;
+  }
+  .step.active .num{ background:#fff; color:var(--purple); }
+  .step .label{ font-size:9px; letter-spacing:1px; opacity:.7; }
+  .step .title{ font-size:13px; font-weight:700; letter-spacing:.5px; }
+
+  /* decorative shapes, positioned absolutely — grid handles layout, not decoration */
+  .shape-peach{
+    position:absolute; left:-30px; bottom:-30px;
+    width:140px;height:140px;border-radius:50%;
+    background:var(--peach);
+  }
+  .shape-dark{
+    position:absolute; left:20px; bottom:40px;
+    width:110px;height:110px;border-radius:50%;
+    background:#241a8f;
+  }
+
+  /* ---- Right form panel ---- */
+  .form-panel{
+    padding:36px 34px;
+    display:grid;
+    grid-template-rows:auto auto 1fr auto;
+    gap:18px;
+  }
+  .form-panel h2{ margin:0; font-size:20px; color:var(--text-dark); }
+  .form-panel > .subtitle{ margin:-10px 0 0; font-size:12.5px; color:var(--text-muted); }
+
+  .fields{
+    display:grid;
+    gap:16px;
+  }
+  .field label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    color:var(--purple);
+    margin-bottom:6px;
+  }
+  .field input{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-size:13px;
+    color:var(--text-dark);
+  }
+  .field input::placeholder{ color:#b7bac3; }
+
+  .actions{
+    display:flex;
+    justify-content:flex-end;
+  }
+  .next-btn{
+    background:var(--purple);
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .next-btn:hover{ background:var(--purple-dark); }
+
+  @media (max-width:520px){
+    .modal{ grid-template-columns:1fr; }
+    .sidebar{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="modal">
+  <!-- Left: step tracker -->
+  <div class="sidebar">
+    <div class="step active">
+      <div class="num">1</div>
+      <div><div class="label">STEP 1</div><div class="title">YOUR INFO</div></div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div><div class="label">STEP 2</div><div class="title">SELECT PLAN</div></div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div><div class="label">STEP 3</div><div class="title">ADD-ONS</div></div>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <div><div class="label">STEP 4</div><div class="title">SUMMARY</div></div>
+    </div>
+    <div></div>
+    <div class="shape-dark"></div>
+    <div class="shape-peach"></div>
+  </div>
+
+  <!-- Right: active form -->
+  <div class="form-panel">
+    <h2>Personal info</h2>
+    <p class="subtitle">Please provide your name, email address, and phone number.</p>
+
+    <div class="fields">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" placeholder="e.g. Stephen King">
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" placeholder="e.g. stephenking@lorem.com">
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="e.g. +1 234 567 890">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="next-btn">Next Step</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
