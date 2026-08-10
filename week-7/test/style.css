@@ -1,0 +1,14 @@
+.root{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.card{
+    width: 200px;
+    background-color: azure;
+    box-shadow: inset 1px;
+    padding: 10px;
+}
+
