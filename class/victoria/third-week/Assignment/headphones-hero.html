@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Playing / Market — Headphones Hero</title>
+<style>
+  :root{
+    --bg-outer:#b06868;
+    --bg-card:#000;
+    --accent:#8a5a52;
+    --text-muted:#c9c3c0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg-outer);
+    font-family:'Poppins','Segoe UI',Arial,sans-serif;
+    padding:60px 20px;
+  }
+
+  /* Outer frame that centers the dark card, like the mockup */
+  .stage{
+    max-width:900px;
+    margin:0 auto;
+  }
+  .logo-row{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    margin-bottom:24px;
+  }
+  .logo-mark{
+    width:34px;height:34px;background:#fff;border-radius:6px 6px 6px 0;
+  }
+  .logo-text{font-weight:700;font-size:13px;letter-spacing:1px;}
+  .logo-text span{display:block;font-weight:400;opacity:.85;font-size:11px;}
+
+  /* ---- THE HERO CARD: CSS GRID with named areas ---- */
+  .hero{
+    background:var(--bg-card);
+    border-radius:16px;
+    color:#fff;
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "nav      nav"
+      "content  image"
+      "featured image";
+    padding:40px 50px;
+    gap:0 30px;
+    min-height:480px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  nav{
+    grid-area:nav;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:40px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.5px;
+  }
+  .brand .dot{width:20px;height:20px;background:#e8a0a0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;}
+  .brand .thin{font-weight:300;opacity:.7;}
+  .nav-links{display:flex;gap:26px;font-size:12px;letter-spacing:.5px;color:#d8d8d8;}
+  .cart{font-size:16px;}
+
+  .content{
+    grid-area:content;
+    align-self:center;
+  }
+  .content h1{
+    font-size:42px;
+    line-height:1.1;
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  .content p{
+    font-size:13px;
+    color:var(--text-muted);
+    max-width:320px;
+    line-height:1.6;
+    margin:0 0 26px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:6px;
+    font-size:11px;
+    letter-spacing:1px;
+    text-decoration:none;
+    font-weight:600;
+  }
+
+  .featured{
+    grid-area:featured;
+    align-self:end;
+    padding-top:40px;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .featured-label{
+    font-size:10px;
+    letter-spacing:1px;
+    color:#8a8a8a;
+    margin-bottom:14px;
+  }
+  .featured-items{
+    display:grid;
+    grid-template-columns:repeat(3, auto);
+    gap:26px;
+  }
+  .fi{display:flex; align-items:center; gap:10px;}
+  .fi .swatch{width:34px;height:34px;border-radius:50%;background:#333;flex-shrink:0;}
+  .fi .price{font-size:13px;font-weight:700;}
+  .fi .name{font-size:10px;color:#9a9a9a;}
+
+  .image-wrap{
+    grid-area:image;
+    grid-row: 2 / 4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .headphone-photo{
+    width:100%;
+    max-width:340px;
+    border-radius:12px;
+  }
+  .whatsapp{
+    position:absolute;
+    bottom:10px; right:10px;
+    width:34px;height:34px;
+    background:#25d366;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+
+  @media (max-width:700px){
+    .hero{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "nav"
+        "image"
+        "content"
+        "featured";
+      padding:30px;
+    }
+    .image-wrap{grid-row:auto; margin-bottom:20px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="logo-row">
+    <div class="logo-mark"></div>
+    <div class="logo-text">PROSANDOVAL<span>CREATIVO</span></div>
+  </div>
+
+  <div class="hero">
+    <nav>
+      <div class="brand"><span class="dot">▶</span> PLAYING <span class="thin">/ MARKET</span></div>
+      <div class="nav-links">
+        <span>INICIO</span><span>TIENDA</span><span>CATEGORÍAS</span><span>BLOG</span><span>CONTACTO</span>
+      </div>
+      <div class="cart">🛒</div>
+    </nav>
+
+    <div class="content">
+      <h1>Headphones<br>Wireless</h1>
+      <p>Mejores efectos de sonido y una mejor experiencia auditiva. Tiene 3 modos de ecualización con los que puede cambiar libremente.</p>
+      <a href="#" class="btn">IR A LA TIENDA</a>
+    </div>
+
+    <div class="featured">
+      <div class="featured-label">ARTÍCULOS DESTACADOS</div>
+      <div class="featured-items">
+        <div class="fi"><div class="swatch"></div><div><div class="price">$55,00</div><div class="name">Oro rosa</div></div></div>
+        <div class="fi"><div class="swatch"></div><div><div class="price">$65,00</div><div class="name">Blue</div></div></div>
+        <div class="fi"><div class="swatch"></div><div><div class="price">$55,00</div><div class="name">Purpure</div></div></div>
+      </div>
+    </div>
+
+    <div class="image-wrap">
+      <img class="headphone-photo" src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500" alt="Wireless headphones">
+      <div class="whatsapp">📞</div>
+    </div>
+  </div>
+
+  <p style="text-align:right;color:#fff;font-weight:700;font-size:13px;margin-top:16px;">PROSANDOVAL.COM</p>
+</div>
+</body>
+</html>

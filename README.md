@@ -170,7 +170,3 @@ git push origin main
 Practice your frontend skills here:
 
 https://www.frontendmentor.io/challenges
-
-
-
-Article: https://app.notion.com/p/The-3-Pillars-of-Modern-Responsive-Web-Design-You-Actually-Need-3a93eab1451880a3b192fafd14d526bf?source=copy_link

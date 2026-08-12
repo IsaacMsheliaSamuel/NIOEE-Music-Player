@@ -1,0 +1,88 @@
+body{
+    / display: grid;
+    background-color: cornflowerblue;
+    */
+    }
+.memo{
+    justify-content: center;
+    padding-left: 500px;
+
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: repeat(4, 200px);
+    gap: 16px;
+    padding-top: ;
+    grid-template-areas: 
+    "screen  twitch  cart"
+    "pickle  fetch   box"
+    "pickle  fetch   box"
+    "crack   pin     ticket";
+}
+
+
+.screen{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: yellow;   
+} 
+.cart{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+.ticket{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+.crack{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: grey;
+}
+.twitch{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+.pin{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: yellow;
+}
+.fetch{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: grey;
+}
+.box{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: yellow;
+}
+.pickle{
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    
+}
+.screen{grid-area: screen;}
+.twitch{grid-area: twitch;}
+.cart{grid-area: cart;}
+.pickle{grid-area: pickle;}
+.fetch{grid-area: fetch;}
+.box{grid-area: box;}
+.crack{grid-area: crack;}
+.pin{grid-area: pin;}
+.ticket{grid-area: ticket;}
