@@ -1,0 +1,114 @@
+body{
+    background-color: #B97771;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.Main{
+    background-color: black;
+    width: 1000px; 
+    height: 500px;
+    padding: 40px; 
+    border-radius: 12px; 
+    border: 6px solid #71897C;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logomain{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cartimage{
+    color: #ffffff;
+}
+
+p{
+    color: #ffffff;
+}
+.logo{
+    color: #ffffff;
+    width: 40px;
+    height: 40px; 
+    background-color: #ffffff;
+    border-radius: 500%; 
+}
+.menue{
+    display: flex;
+    /* border: 2px solid #ffffff; */
+    gap: 30px;  
+    padding: 20px;
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.Heromain{
+    display: flex;
+}
+
+.hero1{
+    /* display: flex; */
+    width: 50%;
+    color: #ffffff;
+}
+
+h1{
+    display: flex;
+    flex-direction: column;
+    font-size: 60px; 
+    font-weight: bold;
+    margin-bottom: 0px; 
+}
+
+.Wireless{
+    font-size: 40px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.fffff{
+    color: #71897C;
+}
+button{
+    border-radius: 12px;
+    padding: 12px;
+    width: 20%;
+    background-color: #B97771;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.hero1middle{
+    margin-top: 50px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.chid1{
+    display: flex;
+    align-items: center;
+}
+.price{
+    margin-bottom: 5px; 
+    color: #71897C;
+}
+.pricename{
+    margin-top: 0px;
+}
+
+.hero1footer{
+    display: flex;
+    gap: 20px;
+}
+.hero2{
+    display: flex; 
+    align-items: end;
+    width: 10px;
+    height: 10%;
+    margin-bottom: 5px; 
+}
