@@ -1,0 +1,116 @@
+body{
+    background-color: rgb(1, 1, 41);
+    color: white;
+  
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,250px);
+    grid-template-rows: repeat(7,100px);
+    grid-template-areas: 
+    "item1  item2  item3"
+    "item1  item2  item3"
+    "item4  item2  item6"
+    "item4  item5  item6"
+    "item4  item5  item6"
+    "item7  item5  item9"
+    "item7  item8  item9";
+    border-radius: 6px;
+    padding-left: 30%;
+    padding-top: 3%;
+    grid-gap: 15px;
+    height: 90%;
+    width: 100%;
+}
+
+.bd1{
+    font-size: small;
+    padding-left: 47%;
+    padding-top: 25px;
+}
+.bd2{
+    line-height: 0%;
+    font-size: 50px;
+    padding-left: 40%;
+    text-align: justify;
+}
+.bd3{
+    font-size: 50px;
+    padding-left: 42%;
+}
+.bd4{
+    font-size: small;
+    padding-left: 41%;
+}
+.it{
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 0%;
+    padding-left: 20px;
+}
+.ft-content{
+    display: flex;
+    gap: 9px;
+}
+.ft1{
+    font-weight: 900;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.ft2{
+    padding-top: 50px;
+    font-size: 12px;
+    padding-left: 19px;
+}
+.clock{
+    height: 180px;
+    width: 180px;
+    padding-left: 28px;
+}
+hr{
+    width: 200px;
+    
+}
+.ft3{
+    padding-left: 19px;
+    font-size: 12px;
+}
+.rt{
+    font-size: smaller;
+    padding-left: 70px;
+}
+.rt1{
+    font-size: large;
+    padding-left: 6px;
+    line-height: 7%;
+}
+.ref{
+    display: flex;
+}
+.boy{
+    background-image: url("3af91da03a34655588f98caf8fea7f2a.jpg");
+    background-position: right;
+    background-size: cover;
+    height: 220px;
+    width: 180px;
+    padding-right: 28px;
+    margin-right: 15px;
+    margin-top: 0;
+    border-radius: 8px;
+}
+.bt{
+    margin-top: 170px;
+    padding-left: 15px;
+    font-size: smaller;
+    width: 70px;
+}
+.item1{grid-area:item1;background: rgb(247, 230, 2);color: rgb(1, 1, 41); border-radius: 8px;}
+.item2{grid-area:item2;background: white;color: rgb(1, 1, 41); border-radius: 8px;}
+.item3{grid-area:item3;background: white;color: rgb(1, 1, 41); border-radius: 8px;}
+.item4{grid-area:item4;background-image: url("8d90306bd68396284c188437ffa938e4.jpg");background-size: cover;color: red; border-radius: 8px;}
+.item5{grid-area:item5;background: #787B8A;color: white; border-radius: 8px;}
+.item6{grid-area:item6;background: rgb(247, 230, 2);color: rgb(1, 1, 41); border-radius: 8px;}
+.item7{grid-area:item7;background: #787B8A;color:white; border-radius: 8px;}
+.item8{grid-area:item8;background: rgb(247, 230, 2);color: rgb(1, 1, 41); border-radius: 8px;}
+.item9{grid-area:item9;background: white;color: rgb(1, 1, 41); border-radius: 8px;}

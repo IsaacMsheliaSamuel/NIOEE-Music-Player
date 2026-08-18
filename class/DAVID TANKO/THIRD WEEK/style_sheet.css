@@ -1,0 +1,36 @@
+.first{
+    border: 2px solid black;
+    width: 300px;
+    height:400px ;
+    margin-left: 40%;
+}
+
+
+h1{
+    margin: 0px;
+    background-color: aqua;
+    padding: 2px;
+}
+p{
+    margin: 0px;
+    background-color: yellowgreen;
+    padding: 2px;
+}
+main{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+border: 2px solid black;
+gap: 2px;
+}
+.one{
+width: 250px;
+height: 200px;
+background-color: black;
+}
+.two{
+width: 250px;
+height: 200px;
+background-color: green;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+  .quiz-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    max-width: 550px;
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .question {
+    margin-bottom: 25px;
+  }
+  .question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .options button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+  .options button:hover {
+    background: #eee;
+  }
+  .correct {
+    background-color: #4CAF50 !important;
+    color: white;
+    border-color: #4CAF50 !important;
+  }
+  .wrong {
+    background-color: #f44336 !important;
+    color: white;
+    border-color: #f44336 !important;
+  }
+  #result {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #submitBtn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  #submitBtn:hover {
+    background: #1976D2;
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>General Knowledge Quiz</h1>
+  <div id="quiz"></div>
+  <button id="submitBtn">Submit Answers</button>
+  <div id="result"></div>
+</div>
+
+<script>
+const questions = [
+  {
+    question: "What is the capital of Nigeria?",
+    options: ["Lagos", "Abuja", "Kano", "Ibadan"],
+    answer: 1
+  },
+  {
+    question: "Which language is primarily used for web page structure?",
+    options: ["CSS", "Python", "HTML", "Java"],
+    answer: 2
+  },
+  {
+    question: "What is 7 x 8?",
+    options: ["54", "56", "58", "64"],
+    answer: 1
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Earth", "Venus", "Mars", "Jupiter"],
+    answer: 2
+  },
+  {
+    question: "Who developed JavaScript?",
+    options: ["Brendan Eich", "Dennis Ritchie", "James Gosling", "Guido van Rossum"],
+    answer: 0
+  }
+];
+
+const quizContainer = document.getElementById("quiz");
+const submitBtn = document.getElementById("submitBtn");
+const resultDiv = document.getElementById("result");
+
+let userAnswers = new Array(questions.length).fill(null);
+
+function renderQuiz() {
+  quizContainer.innerHTML = "";
+  questions.forEach((q, qIndex) => {
+    const qDiv = document.createElement("div");
+    qDiv.className = "question";
+
+    const qText = document.createElement("p");
+    qText.textContent = `${qIndex + 1}. ${q.question}`;
+    qDiv.appendChild(qText);
+
+    const optionsDiv = document.createElement("div");
+    optionsDiv.className = "options";
+
+    q.options.forEach((option, oIndex) => {
+      const btn = document.createElement("button");
+      btn.textContent = option;
+      btn.dataset.qIndex = qIndex;
+      btn.dataset.oIndex = oIndex;
+
+      btn.addEventListener("click", () => selectAnswer(qIndex, oIndex, btn, optionsDiv));
+
+      optionsDiv.appendChild(btn);
+    });
+
+    qDiv.appendChild(optionsDiv);
+    quizContainer.appendChild(qDiv);
+  });
+}
+
+function selectAnswer(qIndex, oIndex, btn, optionsDiv) {
+  userAnswers[qIndex] = oIndex;
+
+  // Reset all buttons in this question's group
+  Array.from(optionsDiv.children).forEach(b => {
+    b.classList.remove("correct", "wrong");
+  });
+
+  const correctIndex = questions[qIndex].answer;
+
+  if (oIndex === correctIndex) {
+    btn.classList.add("correct");
+  } else {
+    btn.classList.add("wrong");
+    // Also highlight the correct one in green
+    optionsDiv.children[correctIndex].classList.add("correct");
+  }
+}
+
+submitBtn.addEventListener("click", () => {
+  let score = 0;
+  questions.forEach((q, i) => {
+    if (userAnswers[i] === q.answer) score++;
+  });
+  resultDiv.textContent = `You scored ${score} out of ${questions.length}!`;
+});
+
+renderQuiz();
+</script>
+
+</body>
+</html>
