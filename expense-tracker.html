@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!-- 
+  This tells the web browser: "This is a modern HTML document."
+  Every HTML file should start with this line.
+-->
+<html lang="en">
+<!-- 
+  <html> is the root/outer container of the whole page.
+  lang="en" tells the browser the page is in English (helps accessibility tools).
+-->
+
+<head>
+  <!-- 
+    The <head> holds information ABOUT the page (not visible content itself):
+    page title, character settings, and our CSS styling.
+  -->
+  <meta charset="UTF-8">
+  <!-- Tells the browser to use UTF-8 text encoding, so special characters (like ₦, $, €) show correctly. -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 
+    This is the MOST important line for making a page "responsive" (work well on phones).
+    width=device-width tells the browser: "make the page as wide as the device screen."
+    initial-scale=1.0 means "don't zoom in or out by default."
+  -->
+
+  <title>Expense Tracker</title>
+  <!-- This text shows up in the browser tab. -->
+
+  <style>
+    /* ============================================
+       CSS SECTION — This controls how everything LOOKS
+       ============================================ */
+
+    /* The * selector means "apply this to EVERY element on the page" */
+    * {
+      margin: 0;              /* Remove default spacing browsers add around elements */
+      padding: 0;              /* Remove default inner spacing */
+      box-sizing: border-box;  /* Makes width/height calculations include padding & border (avoids surprise sizing bugs) */
+    }
+
+    /* Styles for the whole visible page */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif; /* Sets the font. Falls back to Arial, then any sans-serif font, if the first isn't available */
+      background: #f0f2f5;      /* Light grey background color for the whole page */
+      color: #1a1a1a;           /* Default text color (near-black) */
+      padding: 20px;            /* Space between the browser edges and our content */
+      line-height: 1.5;         /* Space between lines of text, for readability */
+    }
+
+    /* The main white card that holds our whole app */
+    .container {
+      max-width: 600px;         /* Never grow wider than 600px, even on big screens */
+      margin: 0 auto;           /* auto left/right margin = centers the box horizontally */
+      background: #ffffff;
+      border-radius: 12px;      /* Rounded corners */
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft drop shadow: x-offset, y-offset, blur, color */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-size: 1.8rem;
+    }
+
+    /* ---------- FORM STYLES ---------- */
+
+    /* .form-group wraps ONE label+input pair */
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;           /* Forces the label onto its own line, above the input */
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;              /* Fill the full width of their container */
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;            /* Remove default browser focus outline, we'll add our own below */
+      transition: border-color 0.2s; /* Smoothly animate the border color change over 0.2 seconds */
+    }
+
+    /* :focus is a "pseudo-class" — styles applied ONLY when the user has clicked/tabbed into this input */
+    input:focus, select:focus {
+      border-color: #4a90e2;    /* Highlight blue border when the input is active */
+    }
+
+    /* Style shown ONLY when we add the "error" class via JavaScript (invalid input) */
+    input.error {
+      border-color: #e74c3c;    /* Red border */
+    }
+
+    /* Small red error message text under an invalid field */
+    .error-message {
+      color: #e74c3c;
+      font-size: 0.8rem;
+      margin-top: 4px;
+      display: none;            /* Hidden by default; JS will show it (display: block) when there's an error */
+    }
+
+    button {
+      cursor: pointer;          /* Shows a "hand" cursor on hover, signaling it's clickable */
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.85;            /* Slightly fade the button on mouse-hover, as visual feedback */
+    }
+
+    .btn-add {
+      width: 100%;
+      background: #4a90e2;
+      color: #fff;
+      padding: 12px;
+      margin-top: 6px;
+    }
+
+    /* ---------- SUMMARY (Total) STYLES ---------- */
+
+    .summary {
+      display: flex;                 /* "flex" lays children out in a row, side-by-side */
+      justify-content: space-between; /* Pushes children to opposite ends */
+      align-items: center;
+      background: #eaf3ff;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .summary .amount {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    /* ---------- SEARCH BAR ---------- */
+
+    .search-bar {
+      margin-bottom: 16px;
+    }
+
+    /* ---------- EXPENSE LIST ---------- */
+
+    .expense-list {
+      list-style: none;         /* Remove default bullet points from the <ul> */
+      max-height: 320px;
+      overflow-y: auto;         /* Adds a scrollbar automatically if the list gets too tall */
+    }
+
+    .expense-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 10px;
+      border-bottom: 1px solid #eee; /* Thin line separating each expense row */
+      gap: 10px;
+    }
+
+    .expense-item:last-child {
+      border-bottom: none;      /* Don't put a line under the very last item */
+    }
+
+    .expense-info {
+      flex: 1;                  /* Take up all remaining space, pushing other items to the edges */
+      min-width: 0;             /* Allows long text to shrink/wrap instead of overflowing */
+    }
+
+    .expense-title {
+      font-weight: 600;
+    }
+
+    .expense-meta {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .expense-amount {
+      font-weight: 700;
+      color: #e74c3c;           /* Red, since it's money being spent */
+      white-space: nowrap;      /* Prevent the amount from wrapping onto two lines */
+    }
+
+    .btn-delete {
+      background: #ffe5e5;
+      color: #e74c3c;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #999;
+      padding: 20px;
+    }
+
+    /* ---------- RESPONSIVE STYLES ---------- */
+    /* A "media query": these rules ONLY apply when the screen is 480px wide or less (phones). */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;          /* Less outer padding on tiny screens, to save space */
+      }
+      .container {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .expense-item {
+        flex-wrap: wrap;        /* Let the delete button drop to a new line if it doesn't fit */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    The <body> holds everything the user actually SEES.
+  -->
+
+  <div class="container">
+    <h1>💰 Expense Tracker</h1>
+
+    <!-- ============ FORM: Add a new expense ============ -->
+    <form id="expense-form">
+      <!-- 
+        <form> groups our inputs together. We gave it id="expense-form" 
+        so JavaScript can find it later with document.getElementById().
+      -->
+
+      <div class="form-group">
+        <label for="title">Expense Title</label>
+        <!-- 'for="title"' links this label to the input with id="title" below, so clicking the label focuses the input -->
+        <input type="text" id="title" placeholder="e.g. Groceries">
+        <div class="error-message" id="title-error">Please enter a title.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount ($)</label>
+        <input type="number" id="amount" placeholder="e.g. 25.50" step="0.01">
+        <!-- type="number" gives a numeric keyboard on mobile and basic browser validation.
+             step="0.01" allows decimal values like cents. -->
+        <div class="error-message" id="amount-error">Please enter a valid amount greater than 0.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-add">+ Add Expense</button>
+      <!-- type="submit" means clicking this button triggers the form's "submit" event -->
+    </form>
+
+    <!-- ============ SUMMARY: Shows the running total ============ -->
+    <div class="summary">
+      <span>Total Spent</span>
+      <span class="amount">$<span id="total-amount">0.00</span></span>
+      <!-- We wrap "0.00" in its own <span id="total-amount"> so JS can update JUST that number later -->
+    </div>
+
+    <!-- ============ SEARCH: filter the list below ============ -->
+    <div class="search-bar">
+      <label for="search">Search Expenses</label>
+      <input type="text" id="search" placeholder="Search by title or category...">
+    </div>
+
+    <!-- ============ LIST: all expenses appear here ============ -->
+    <ul class="expense-list" id="expense-list">
+      <!-- This starts EMPTY. JavaScript will fill it in dynamically. -->
+    </ul>
+  </div>
+
+  <script>
+    /* ============================================
+       JAVASCRIPT SECTION — This controls BEHAVIOR
+       (what happens when you click, type, etc.)
+       ============================================ */
+
+    // ---------- STEP 1: Grab references to the HTML elements we'll need ----------
+    // document.getElementById("x") finds the HTML element with id="x" and gives us
+    // a JavaScript "handle" to it so we can read/change it.
+
+    const form = document.getElementById('expense-form');
+    const titleInput = document.getElementById('title');
+    const amountInput = document.getElementById('amount');
+    const categoryInput = document.getElementById('category');
+    const titleError = document.getElementById('title-error');
+    const amountError = document.getElementById('amount-error');
+    const expenseListEl = document.getElementById('expense-list');
+    const totalAmountEl = document.getElementById('total-amount');
+    const searchInput = document.getElementById('search');
+
+    // ---------- STEP 2: Set up our "data" ----------
+    // This array (a list) will hold every expense as a JavaScript object, e.g.
+    // { id: 123, title: "Coffee", amount: 4.5, category: "Food" }
+    //
+    // We try to load any previously-saved expenses from LocalStorage first.
+    // LocalStorage is a small storage space the browser gives each website,
+    // which keeps data even after you close the tab or restart your computer.
+
+    let expenses = loadExpenses();
+
+    // This variable tracks what the user has typed into the search box.
+    let searchTerm = '';
+
+    // ---------- STEP 3: LocalStorage helper functions ----------
+
+    function loadExpenses() {
+      // localStorage.getItem('key') retrieves saved text under that key, or null if nothing was saved.
+      const saved = localStorage.getItem('expenses');
+
+      // If nothing was saved before, return an empty list to start fresh.
+      if (!saved) return [];
+
+      // LocalStorage can only store TEXT (strings), so we saved our data as a JSON string.
+      // JSON.parse() converts that string BACK into a real JavaScript array/objects.
+      return JSON.parse(saved);
+    }
+
+    function saveExpenses() {
+      // JSON.stringify() converts our JavaScript array into a text string,
+      // because LocalStorage can only store strings, not real objects/arrays.
+      localStorage.setItem('expenses', JSON.stringify(expenses));
+    }
+
+    // ---------- STEP 4: Validation ----------
+    // This function checks the form inputs are valid BEFORE we add an expense.
+    // It returns true if everything is okay, false if something is wrong.
+
+    function validateForm() {
+      let isValid = true; // Assume valid until we find a problem
+
+      // .trim() removes extra spaces from the start/end of the text the user typed.
+      const titleValue = titleInput.value.trim();
+      const amountValue = parseFloat(amountInput.value);
+      // parseFloat() converts a text string like "25.50" into an actual number: 25.5
+      // If the text isn't a valid number, parseFloat returns NaN ("Not a Number").
+
+      // --- Check the title ---
+      if (titleValue === '') {
+        titleInput.classList.add('error');       // Adds the CSS class "error" -> shows red border
+        titleError.style.display = 'block';       // Makes the error message visible
+        isValid = false;
+      } else {
+        titleInput.classList.remove('error');     // Remove red border if it was there
+        titleError.style.display = 'none';        // Hide the error message
+      }
+
+      // --- Check the amount ---
+      // isNaN(x) checks "is this NOT a valid number?"
+      // We also reject 0 or negative numbers, since an expense should cost something.
+      if (isNaN(amountValue) || amountValue <= 0) {
+        amountInput.classList.add('error');
+        amountError.style.display = 'block';
+        isValid = false;
+      } else {
+        amountInput.classList.remove('error');
+        amountError.style.display = 'none';
+      }
+
+      return isValid;
+    }
+
+    // ---------- STEP 5: Handle form submission (Add Expense) ----------
+
+    // addEventListener attaches a function that runs whenever a specific event happens.
+    // Here: when the form is "submit"-ted (Add Expense button clicked, or Enter pressed).
+    form.addEventListener('submit', function (event) {
+      // Forms normally reload the whole page when submitted. We don't want that
+      // (we're a single-page app), so we cancel that default behavior:
+      event.preventDefault();
+
+      // Run our validation checks. If anything is invalid, stop here.
+      if (!validateForm()) {
+        return; // "return" with nothing exits the function immediately
+      }
+
+      // Build a new expense object from the form values.
+      const newExpense = {
+        id: Date.now(),        // Date.now() gives the current timestamp in milliseconds —
+                                // a quick, easy way to generate a unique ID for each expense.
+        title: titleInput.value.trim(),
+        amount: parseFloat(amountInput.value),
+        category: categoryInput.value,
+        date: new Date().toLocaleDateString()  // e.g. "8/17/2026" — today's date, human readable
+      };
+
+      // Add the new expense to the FRONT of our array with unshift()
+      // (so the newest expense shows up at the top of the list).
+      expenses.unshift(newExpense);
+
+      saveExpenses();   // Persist the updated list to LocalStorage
+      renderExpenses(); // Redraw the list on screen to include the new item
+
+      // Clear the form fields so the user can add another expense easily.
+      form.reset();
+    });
+
+    // ---------- STEP 6: Handle deleting an expense ----------
+
+    function deleteExpense(id) {
+      // .filter() creates a NEW array containing only the items where the condition is true.
+      // Here: "keep every expense whose id does NOT match the one we want to delete."
+      expenses = expenses.filter(function (expense) {
+        return expense.id !== id;
+      });
+
+      saveExpenses();
+      renderExpenses();
+    }
+
+    // ---------- STEP 7: Handle searching/filtering ----------
+
+    searchInput.addEventListener('input', function (event) {
+      // The "input" event fires every time the text in the box changes (every keystroke).
+      // .toLowerCase() makes the search case-insensitive ("Food" matches "food").
+      searchTerm = event.target.value.toLowerCase();
+      renderExpenses(); // Redraw the list using the new search term
+    });
+
+    // ---------- STEP 8: Rendering (drawing the list + total on screen) ----------
+
+    function renderExpenses() {
+      // First, figure out which expenses match the current search term.
+      const filtered = expenses.filter(function (expense) {
+        // .includes() checks if one string contains another.
+        // We check both the title AND category, so searching "food" finds food-category items too.
+        return expense.title.toLowerCase().includes(searchTerm) ||
+               expense.category.toLowerCase().includes(searchTerm);
+      });
+
+      // Clear out whatever was in the list before, so we can redraw it fresh.
+      expenseListEl.innerHTML = '';
+
+      // If there's nothing to show, display a friendly empty message and stop here.
+      if (filtered.length === 0) {
+        expenseListEl.innerHTML = '<li class="empty-message">No expenses found.</li>';
+      } else {
+        // .forEach() runs a function once for EVERY item in the array.
+        filtered.forEach(function (expense) {
+          // Create a new <li> element in memory (not on the page yet).
+          const li = document.createElement('li');
+          li.className = 'expense-item';
+
+          // .toFixed(2) formats a number to always show exactly 2 decimal places (e.g. 5 -> "5.00").
+          // We build the inner HTML of the row using a "template literal" (backticks ``),
+          // which lets us mix plain text with variables using ${ } placeholders.
+          li.innerHTML = `
+            <div class="expense-info">
+              <div class="expense-title">${expense.title}</div>
+              <div class="expense-meta">${expense.category} • ${expense.date}</div>
+            </div>
+            <div class="expense-amount">-$${expense.amount.toFixed(2)}</div>
+            <button class="btn-delete" data-id="${expense.id}">Delete</button>
+          `;
+          // data-id="${expense.id}" stores the expense's id directly on the button in the HTML,
+          // so we can read it back later when the button is clicked (see below).
+
+          // Add this fully-built row into the actual visible list on the page.
+          expenseListEl.appendChild(li);
+        });
+      }
+
+      // Recalculate the total AFTER filtering-and-drawing, using the FULL expense list
+      // (the total should reflect ALL expenses, not just the filtered/searched ones).
+      const total = expenses.reduce(function (sum, expense) {
+        return sum + expense.amount;
+      }, 0);
+      // .reduce() walks through the array and "accumulates" a single value.
+      // Starting value is 0; each step it adds the current expense's amount to the running sum.
+
+      totalAmountEl.textContent = total.toFixed(2);
+    }
+
+    // ---------- STEP 9: Event delegation for Delete buttons ----------
+    // Instead of adding a "click" listener to every single delete button (which would be
+    // wasteful and wouldn't work for buttons added later), we add ONE listener to the
+    // parent list, and check what was actually clicked. This is called "event delegation."
+
+    expenseListEl.addEventListener('click', function (event) {
+      // event.target is the exact element that was clicked.
+      if (event.target.classList.contains('btn-delete')) {
+        // Read the id we stored earlier in the data-id attribute.
+        // It comes back as a string, so we convert it to a number with Number().
+        const id = Number(event.target.getAttribute('data-id'));
+        deleteExpense(id);
+      }
+    });
+
+    // ---------- STEP 10: Initial render ----------
+    // Run this once when the page first loads, so any previously-saved
+    // expenses (from LocalStorage) immediately show up on screen.
+    renderExpenses();
+  </script>
+</body>
+</html>
