@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheBuidl Bank — Transfer</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <div class="logo">
+        <div class="logo-icon">₦</div>
+        <div>
+          <h1>TheBuidl Bank</h1>
+          <p>Bank Management System</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="accounts.html" class="nav-link">Accounts</a>
+        <a href="transactions.html" class="nav-link">Transactions</a>
+        <a href="transfer.html" class="nav-link active">Transfer</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">JD</div>
+          <div>
+            <strong id="currentUserName">John Doe</strong>
+            <span id="currentUserEmail">john@example.com</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">TRANSFER</p>
+        <h2>Transfer Funds</h2>
+        <p>Send money from your account to any other account.</p>
+      </div>
+    </section>
+
+    <div class="transfer-layout">
+
+      <!-- Transfer Form -->
+      <section class="panel transfer-panel">
+
+        <div class="panel-header">
+          <div>
+            <h3>Send Money</h3>
+            <p>Fill in the details below to transfer funds.</p>
+          </div>
+        </div>
+
+        <form id="transferForm" style="padding: 24px;">
+
+          <div class="form-group">
+            <label for="transferFromAccount">From Account</label>
+            <select id="transferFromAccount" class="form-select">
+              <option value="">Select your account</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="transferToAccount">Receiver Account Number</label>
+            <input
+              type="text"
+              id="transferToAccount"
+              placeholder="Enter 10-digit account number"
+              maxlength="10"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="transferAmount">Amount (₦)</label>
+            <input
+              type="number"
+              id="transferAmount"
+              placeholder="Enter amount"
+              min="1"
+            >
+          </div>
+
+          <p id="transferMessage" class="form-message"></p>
+
+          <button type="submit" class="primary-btn full-width">Send Money</button>
+
+        </form>
+
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="transfer-tips">
+
+        <div class="panel">
+          <div class="panel-header">
+            <div><h3>How it works</h3></div>
+          </div>
+          <ul class="tips-list">
+            <li>Select the account you want to send from.</li>
+            <li>Enter the receiver's 10-digit account number.</li>
+            <li>Enter the amount you want to send.</li>
+            <li>Click <strong>Send Money</strong> to confirm.</li>
+            <li>Both accounts update instantly.</li>
+          </ul>
+        </div>
+
+        <div class="panel" style="margin-top: 16px;">
+          <div class="panel-header">
+            <div>
+              <h3>Your Accounts</h3>
+              <p>Available balances</p>
+            </div>
+          </div>
+          <div id="accountsSummary" style="padding: 16px;">
+            <p style="color: var(--muted); font-size: 13px;">Loading accounts...</p>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/transfer.js"></script>
+
+</body>
+</html>

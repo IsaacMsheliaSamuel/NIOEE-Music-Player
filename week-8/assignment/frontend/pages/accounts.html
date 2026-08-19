@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheBuidl Bank — Accounts</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <div class="logo">
+        <div class="logo-icon">₦</div>
+        <div>
+          <h1>TheBuidl Bank</h1>
+          <p>Bank Management System</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="accounts.html" class="nav-link active">Accounts</a>
+        <a href="transactions.html" class="nav-link">Transactions</a>
+        <a href="transfer.html" class="nav-link">Transfer</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">JD</div>
+          <div>
+            <strong id="currentUserName">John Doe</strong>
+            <span id="currentUserEmail">john@example.com</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">ACCOUNTS</p>
+        <h2>Bank Accounts</h2>
+        <p>View, manage and create your bank accounts.</p>
+      </div>
+      <button id="openAccountBtn" class="primary-btn">+ Create Account</button>
+    </section>
+
+    <!-- Accounts Table -->
+    <section class="panel">
+
+      <div class="panel-header account-header">
+        <div>
+          <h3>All Accounts</h3>
+          <p>Your registered bank accounts.</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search by name or number...">
+          <button id="searchBtn">Search</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Account Number</th>
+              <th>Account Name</th>
+              <th>Balance</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="accountsTableBody">
+            <tr class="empty-state">
+              <td colspan="5">
+                <span>🏦</span>
+                <h4>No accounts yet</h4>
+                <p>Create a bank account to get started.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Create Account Modal -->
+  <div id="modal" class="modal hidden">
+
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div>
+          <h3>Create Account</h3>
+          <p>Create a new bank account.</p>
+        </div>
+        <button id="closeModal" class="close-btn">×</button>
+      </div>
+
+      <form id="accountForm">
+
+        <div class="form-group">
+          <label for="accountName">Account Name</label>
+          <input type="text" id="accountName" placeholder="Enter account name" required>
+        </div>
+
+        <div class="form-group" id="accountNumberGroup">
+          <label for="accountNumber">Account Number</label>
+          <input type="text" id="accountNumber" placeholder="Auto-generated" maxlength="10">
+        </div>
+
+        <div class="form-group">
+          <label for="initialDeposit">Initial Deposit (₦)</label>
+          <input type="number" id="initialDeposit" placeholder="Enter amount" min="0" required>
+        </div>
+
+        <p id="accountMessage" class="form-message"></p>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Create Account</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/accounts.js"></script>
+
+</body>
+</html>
