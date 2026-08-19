@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Expense Tracker</title>
+    <link rel="stylesheet" href="exp.css">
+</head>
+<body>
+    <header>
+        <h2>EXPENSE TRACKER</h2>
+    </header>    
+        <div class="container">
+            
+          <h4>YOUR BALANCE</h4>
+            <h1 id="balance">₦0.00</h1>
+            <div class="expenses-container">
+                <div >
+                    <h4>INCOME</h4>
+                    <p id="money-in" class="money-in">+₦0.00</p>
+                
+                </div>
+                <div >
+                    <h4>OUTCOME</h4>
+                    <p id="money-out" class="money-out">-₦0.00</p>
+                
+                </div>
+            </div>
+             <h3>Transaction History</h3>
+        <ul id="list" class="list">
+            
+        </ul>
+    <!-- <h3>Add new transaction</h3> -->
+          <form id="form">
+             <div class="form-control">
+                <label for="text">Name</label>
+                <input type="text" id="text" placeholder="enter transaction">
+             </div>
+             <div class="form-control">
+                <label for="amount">Name</label>
+                <input type="number" id="amount" placeholder="enter amount">
+             </div>
+
+             <button class="btn">Add Transaction</button>
+           </form> 
+        </div>
+       
+
+    <script src="exp.js"></script>
+</body>
+</html>
