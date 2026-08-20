@@ -34,6 +34,12 @@
 
 // YOUR CODE HERE
 
+const token = localStorage.getItem("token");
+
+if (token) {
+    window.location.href = "dashboard.html";
+}
+
 
 // ==========================================================
 // STEP 2 — SELECT DOM ELEMENTS
@@ -57,6 +63,27 @@
 
 // YOUR CODE HERE
 
+// Login Form Elements
+const loginForm = document.getElementById("loginForm");
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+const loginMessage = document.getElementById("loginMessage");
+
+// Signup Form Elements
+const signupForm = document.getElementById("signupForm");
+const signupName = document.getElementById("signupName");
+const signupEmail = document.getElementById("signupEmail");
+const signupPassword = document.getElementById("signupPassword");
+const confirmPassword = document.getElementById("confirmPassword");
+const signupMessage = document.getElementById("signupMessage");
+
+// Toggle Buttons
+const showSignupBtn = document.getElementById("showSignupBtn");
+const showLoginBtn = document.getElementById("showLoginBtn");
+
+// Auth View Containers
+const loginView = document.getElementById("loginView");
+const signupView = document.getElementById("signupView");
 
 // ==========================================================
 // STEP 3 — API HELPER (local copy)
@@ -100,6 +127,19 @@
 */
 
 // YOUR CODE HERE
+
+function showLoginView() {
+    loginView.classList.remove("hidden")
+    signupView.classList.add("hidden")
+}
+
+function showSignupView() {
+    loginView.classList.add("hidden")
+    signupView.classList.remove("hidden")
+}
+
+showSignupBtn.addEventListener("click", showSignupView);
+showLoginBtn.addEventListener("click", showLoginView)
 
 
 // ==========================================================

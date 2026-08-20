@@ -1,0 +1,126 @@
+/*
+  TASK: Style your Weather App.
+
+  Work through each section below and write the CSS for it.
+  The comments describe what each section should look like.
+*/
+
+
+/* ======================
+   1. GLOBAL / RESET
+   ======================
+   - Remove default margin and padding from all elements
+   - Set box-sizing to border-box
+   - Choose a font (e.g. 'Segoe UI', system-ui, sans-serif)
+   - Give the body a background color and a default text color
+   - Make sure the body fills at least the full viewport height
+*/
+
+
+/* ======================
+   2. LAYOUT
+   ======================
+   - Center the app content with a max-width (e.g. 600px)
+   - Add comfortable padding around the content
+*/
+
+
+/* ======================
+   3. HEADER
+   ======================
+   - Display the title and location button side by side
+   - Space them apart (space-between)
+*/
+
+
+/* ======================
+   4. SEARCH BAR
+   ======================
+   - Place the input and button next to each other (flexbox)
+   - Style the input: rounded corners, border, padding
+   - Style the button: background color, no border, cursor pointer
+   - Add a focus style to the input (e.g. change border color)
+*/
+
+
+/* ======================
+   5. LOADING INDICATOR
+   ======================
+   - Center it on the page
+   - A simple CSS spinner works well:
+     - A div with a border, half of which is a different color
+     - Use @keyframes to rotate it continuously
+   - Add a text label below it
+*/
+
+
+/* ======================
+   6. ERROR MESSAGE
+   ======================
+   - Give it a red-tinted background and border
+   - Add padding and rounded corners
+   - Make it stand out but not alarming
+*/
+
+
+/* ======================
+   7. WEATHER CARD
+   ======================
+   - Rounded card with a subtle background (slightly lighter than body)
+   - Show city name prominently
+   - Display the weather icon and temperature side by side
+   - Temperature should be large (e.g. 3rem)
+   - Show condition text below, in a muted color
+   - Show humidity and wind speed as small detail chips
+*/
+
+
+/* ======================
+   8. 5-DAY FORECAST (Bonus)
+   ======================
+   - A row of 5 equal cards
+   - Use CSS Grid: grid-template-columns: repeat(5, 1fr)
+   - Each card: centered text, icon, high temp, low temp
+   - On small screens, reduce to 3 columns
+*/
+
+
+/* ======================
+   9. SEARCH HISTORY (Bonus)
+   ======================
+   - A row of small pill-shaped buttons
+   - Each pill should look clickable (cursor: pointer, hover effect)
+*/
+
+
+/* ======================
+   10. UTILITY
+   ======================
+   - .hidden  →  display: none !important
+     (Used by JS to show/hide sections)
+*/
+
+
+/* ======================
+   11. RESPONSIVE
+   ======================
+   - Use a media query for screens narrower than ~480px
+   - Reduce font sizes slightly
+   - Stack any side-by-side elements if needed
+*/
+
+
+/* ======================
+   BONUS: Dynamic backgrounds
+   ======================
+   JavaScript will add one of these classes to <body>
+   based on the current weather condition.
+   Define a different background gradient for each:
+
+   body.sunny   { }
+   body.cloudy  { }
+   body.rainy   { }
+   body.snowy   { }
+   body.stormy  { }
+   body.night   { }
+*/
