@@ -1,0 +1,49 @@
+body{
+    
+}
+main{
+    margin-left: 40%;
+}
+.calculator{
+    background: whitesmoke;
+    width: 500px;
+    height: 500px;
+    padding-left: 30px;
+    padding-top: 20px;
+    border-radius: 19px;
+    border: 0.5px solid rgba(0, 0, 0, 0.664);
+}
+input{
+    width: 90%;
+    height: 30px;
+    border-radius: 7px;
+    border: 0.2px solid;
+}
+button{
+     width: 90%;
+    height: 30px;
+    border-radius: 7px;
+    border: 0.2px solid;
+    background: black;
+    color: white;
+}
+.screen{
+    background-color: white;
+    width: 500px;
+    height: 250px;
+    padding-top: 20px;
+    color: black;
+}
+.result{
+    border: aqua;
+}
+.card{
+    background: whitesmoke;
+    color: black;
+}
+.card:hover{
+    background: aqua;
+}
+#save{
+    border-radius: 50%;
+}

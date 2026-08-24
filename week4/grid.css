@@ -1,0 +1,43 @@
+dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-areas:
+    "header  header"
+    "sidebar content"
+    "footer  footer";
+  gap: 12px;
+  height: 100vh;
+  background-color: cyan;
+  
+}
+
+.header  { grid-area: header;  background: #334155; color: white; }
+.sidebar { grid-area: sidebar; background: #475569; color: white; }
+.content { grid-area: content; background: #f1f5f9; }
+.footer  { grid-area: footer;  background: #334155; color: white; } 
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  gap: 16px;
+  grid-template-areas:
+    "voice   hustle  hustle hustle"
+    "voice   stepup  work  work"
+    "voice  stepup  sound  ready";
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.voice   { grid-area: voice; }
+.hustle  { grid-area: hustle; }
+.sound   { grid-area: sound; }
+.work    { grid-area: work; }
+.stepup  { grid-area: stepup; }
+.ready   { grid-area: ready; }

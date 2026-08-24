@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Tracker</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body >
+    <main>
+    <h1>DISCOUNT TRACKER</h1>
+    <p>Track product discounts and watch your savings add up.</p>
+    <div class="calculator">
+        <h2>Add a discount</h2>
+        <form id="data">
+            <label>Product</label>
+            <br>
+            <br>
+            <input type="text" placeholder="e.g sneakers" id="product"> 
+            <br>
+            <br>
+            <label>Price($)</label>
+            <br>
+            <br>
+            <input type="number" placeholder="0.00" id="price">
+            <br>
+            <br>
+            <label>Discount(%)</label>
+            <br>
+            <br>
+            <input type="number" placeholder="0" id="discount">
+        </form>
+        <br>
+        <br>
+        <button type="button" onclick="discount_amount()" id="add_btn">
+    + Add
+</button>
+        <br>
+        <br>
+    </div>
+    <br>
+    <div class="screen">   
+    </div>
+    <button type="button" onclick="save()" id="save">Save</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
