@@ -1,0 +1,140 @@
+body{
+    background-color: #EEF5FF; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin:120px;
+
+}
+
+.submain{
+    background-color: #ffffff; 
+    width: 800px;
+    height: 500px; 
+    border-radius: 10px;
+    padding: 20px; 
+    display: flex;
+}
+
+.sidebar{
+    background-color: #0000FF; 
+    width: 30%; 
+    height: 100%; 
+    border-radius: 10px; 
+}
+
+.content{
+    background-color: #e3dbdb; 
+    width: 70%; 
+    height: 100%; 
+    border-radius: 10px;
+    padding-left: 40px; 
+
+}
+
+.instructions{
+    font-size: 14px;
+    margin: 0; 
+    font-weight: bold;
+    color: #aaa9ab;
+    margin-bottom: 20px; 
+}
+
+h1{
+    font-size: 30px;
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+    color: #00008B;  
+}
+
+.sidebar-content-one{
+     padding: 20px;
+    display: flex; 
+    align-items: center; 
+    /* justify-content: space-between; */
+    gap: 10px;
+    vertical-align: bottom;
+}
+
+h3{
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+p{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px; 
+    color:#ffffff
+}
+
+.tag{
+    border: 2px solid #ffffff;
+    border-radius: 100%; 
+    background-color: #ffffff;
+    padding: 10px;
+    width: 10px;
+    height: 10px; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.tagcontent{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 10px; 
+    border: #000;
+    border-radius: 4px; 
+    width: 80%; 
+    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+}
+
+label{
+    font-size: 20px; 
+    padding-bottom: 20px; 
+    font-weight: bold;
+    color: #00008B;
+}
+
+.sidebar-content-Two{
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    /* justify-content: space-between; */
+    gap: 10px;
+    vertical-align: bottom;
+}
+
+.tag2{
+     border: 2px solid #ffffff;
+    border-radius: 100%; 
+    /* background-color: #ffffff; */
+    padding: 10px;
+    width: 10px;
+    height: 10px; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+button{
+    padding: 16px;
+    background-color: #0000FF;
+    color: #ffffff;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px; 
+    margin-left: 60%;
+    margin-top: 50px; 
+}

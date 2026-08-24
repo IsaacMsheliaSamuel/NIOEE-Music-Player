@@ -1,4 +1,4 @@
-/* .dashboard {
+dashboard {
   display: grid;
   grid-template-columns: 220px 1fr;
   grid-template-rows: 60px 1fr 50px;
@@ -15,7 +15,7 @@
 .header  { grid-area: header;  background: #334155; color: white; }
 .sidebar { grid-area: sidebar; background: #475569; color: white; }
 .content { grid-area: content; background: #f1f5f9; }
-.footer  { grid-area: footer;  background: #334155; color: white; } */
+.footer  { grid-area: footer;  background: #334155; color: white; } 
 
 .bento-grid {
   display: grid;

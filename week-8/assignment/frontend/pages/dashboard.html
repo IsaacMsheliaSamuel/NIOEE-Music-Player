@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheBuidl Bank — Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <div class="logo">
+        <div class="logo-icon">₦</div>
+        <div>
+          <h1>TheBuidl Bank</h1>
+          <p>Bank Management System</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="accounts.html" class="nav-link">Accounts</a>
+        <a href="transactions.html" class="nav-link">Transactions</a>
+        <a href="transfer.html" class="nav-link">Transfer</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">JD</div>
+          <div>
+            <strong id="currentUserName">John Doe</strong>
+            <span id="currentUserEmail">john@example.com</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <!-- Welcome -->
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">DASHBOARD</p>
+        <h2>Welcome back, <span id="welcomeUserName">John</span></h2>
+        <p>Manage your accounts, transactions and balance.</p>
+      </div>
+      <a href="accounts.html" class="primary-btn">+ Create Account</a>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div>
+          <span>Total Accounts</span>
+          <strong id="totalAccounts">0</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">₦</div>
+        <div>
+          <span>Total Deposits</span>
+          <strong id="totalDeposits">₦0.00</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">↗</div>
+        <div>
+          <span>Total Withdrawals</span>
+          <strong id="totalWithdrawals">₦0.00</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">↔</div>
+        <div>
+          <span>Transactions</span>
+          <strong id="totalTransactions">0</strong>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="panel">
+
+      <div class="panel-header">
+        <div>
+          <h3>Quick Actions</h3>
+          <p>Navigate to banking operations.</p>
+        </div>
+      </div>
+
+      <div class="action-grid">
+
+        <a href="accounts.html" class="action-card">
+          <span class="action-icon deposit">+</span>
+          <div>
+            <strong>Accounts</strong>
+            <small>View and manage accounts</small>
+          </div>
+        </a>
+
+        <a href="transfer.html" class="action-card">
+          <span class="action-icon transfer">↔</span>
+          <div>
+            <strong>Transfer</strong>
+            <small>Send money between accounts</small>
+          </div>
+        </a>
+
+        <a href="transactions.html" class="action-card">
+          <span class="action-icon history">↻</span>
+          <div>
+            <strong>Transactions</strong>
+            <small>View transaction history</small>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- Recent Transactions -->
+    <section class="panel">
+
+      <div class="panel-header">
+        <div>
+          <h3>Recent Transactions</h3>
+          <p>Your latest 5 activities.</p>
+        </div>
+        <a href="transactions.html" class="secondary-btn">View All</a>
+      </div>
+
+      <div id="recentTransactionsContainer">
+        <div class="empty-transactions">
+          <span>📋</span>
+          <h4>No transactions yet</h4>
+          <p>Transactions will appear here.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheBuidl Bank — Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <section class="auth-section">
+
+    <div class="auth-container">
+
+      <div class="auth-logo">
+        <div class="logo-icon">₦</div>
+        <div>
+          <h1>TheBuidl Bank</h1>
+          <p>Simple. Secure. Banking.</p>
+        </div>
+      </div>
+
+      <!-- Login -->
+      <div id="loginView" class="auth-card">
+
+        <div class="auth-header">
+          <h2>Welcome back</h2>
+          <p>Login to access your bank account.</p>
+        </div>
+
+        <form id="loginForm">
+
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+          </div>
+
+          <p id="loginMessage" class="form-message"></p>
+
+          <button type="submit" class="primary-btn full-width">Login</button>
+
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account?
+          <button type="button" id="showSignupBtn">Create one</button>
+        </p>
+
+      </div>
+
+      <!-- Signup -->
+      <div id="signupView" class="auth-card hidden">
+
+        <div class="auth-header">
+          <h2>Create an account</h2>
+          <p>Sign up to start using TheBuidl Bank.</p>
+        </div>
+
+        <form id="signupForm">
+
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input type="text" id="signupName" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input type="email" id="signupEmail" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" placeholder="Create a password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+          </div>
+
+          <p id="signupMessage" class="form-message"></p>
+
+          <button type="submit" class="primary-btn full-width">Create Account</button>
+
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <button type="button" id="showLoginBtn">Login</button>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

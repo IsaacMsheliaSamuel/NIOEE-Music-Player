@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheBuidl Bank — Transactions</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-content">
+
+      <div class="logo">
+        <div class="logo-icon">₦</div>
+        <div>
+          <h1>TheBuidl Bank</h1>
+          <p>Bank Management System</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="accounts.html" class="nav-link">Accounts</a>
+        <a href="transactions.html" class="nav-link active">Transactions</a>
+        <a href="transfer.html" class="nav-link">Transfer</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">JD</div>
+          <div>
+            <strong id="currentUserName">John Doe</strong>
+            <span id="currentUserEmail">john@example.com</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">TRANSACTIONS</p>
+        <h2>Transaction History</h2>
+        <p>All deposits, withdrawals and transfers on your accounts.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+
+      <div class="panel-header">
+        <div>
+          <h3>All Transactions</h3>
+          <p>Most recent activity first.</p>
+        </div>
+        <button id="viewAllBtn" class="secondary-btn">View All</button>
+      </div>
+
+      <div id="transactionsContainer">
+        <div class="empty-transactions">
+          <span>📋</span>
+          <h4>No transactions yet</h4>
+          <p>Transactions will appear here.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/transactions.js"></script>
+
+</body>
+</html>
