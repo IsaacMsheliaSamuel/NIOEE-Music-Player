@@ -35,14 +35,12 @@ function discount_amount() {
         </div>
     `;
 }
-const saveButton = document.getElementById("save");
 function save(){
-    const task = input.value.trim;
-    if(input){
-        createTaskElement(input);
-        tas.Input.value = "";
-    }
-}
-function createTaskElement(task){
-
+    event.preventDefault();
+    var product = document.getElementById("product").value;
+    var price = document.getElementById("price").value;
+    var discount = document.getElementById("discount").value + "%";
+    localStorage.setItem('product:',product);
+    localStorage.setItem('product price:',price);
+    localStorage.setItem('product:',discount);
 }

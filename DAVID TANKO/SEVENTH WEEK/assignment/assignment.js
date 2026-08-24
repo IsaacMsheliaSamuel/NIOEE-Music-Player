@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 const alertEL = document.querySelector('.alert');
 
 const setAlert = (text = '', type = 'info') => {
@@ -81,4 +83,64 @@ modeBtn.addEventListener("click", function () {
     }
 
 });
+//let userData =[];
+//async function loadData() {
+    //userData = await response.json;
+    //renderList(userData);    
+//}
+//document.getElementById('sort-select').addEventListener('change',(event)=>{
+   // const selectedvalue = event.target.value;
+    //let sorted = [...userData];
+   // if (selectedvalue==='name-asc'){
+        //sorted.sort((a,b) => a.name.localeCompare(b.name));
+   // }else if (selectedvalue=== 'name-desc'){
+       // sorted.sort((a,b) => b.name.localeCompare(a.name));
+    //}else if (selectedvalue=== 'id-asc'){
+        //sorted.sort((a,b) => a.id - b.id);
+//}
+//renderList(sorted);
+//})
+//function renderList(data){
+    //let output= document.getElementById('results');
+    //results.innerHTML = data.map(user => `<div class="card">
+
+                    //<div class="user-header">
+                        //<h2>${user.name}</h2>
+                        //<p>@${user.username}</p>
+                   // </div>
+
+                    //<div class="user-details">
+
+                        //<div class="detail">
+                            //<span class="label">Email</span>
+                            //<span class="value">${user.email}</span>
+                        //</div>
+
+                        //<div class="detail">
+                            //<span class="label">Phone</span>
+                            //<span class="value">${user.phone}</span>
+                       // </div>
+
+                       // <div class="detail">
+                            //<span class="label">Website</span>
+                            //<span class="value">${user.website}</span>
+                        //</div>
+
+                        //<div class="detail">
+                            //<span class="label">Address</span>
+                           // <span class="value1">
+                                //${user.address.street},
+                               // ${user.address.suite},
+                                //${user.address.city}
+                            //</span>
+                        //</div>
+
+                       // <div class="detail">
+                           // <span class="label">Company</span>
+                           // <span class="value">${user.company.name}</span>
+                        //</div>
+
+                    //</div>`
+//)}
+//loadData();
 main();
