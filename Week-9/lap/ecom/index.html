@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FakeStore UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+      TEAM GUIDE: BUILDING THE UI FOR THE FAKE API
+      API: https://fakeapi.platzi.com/
+
+      Goal:
+      Build a small ecommerce storefront using the products endpoint.
+      The app should display products, allow filtering by category,
+      support search, and let users add items to a cart.
+
+      HTML responsibilities:
+      1. Create the page structure with a header, hero section,
+         category filter section, product grid, cart sidebar, and footer.
+      2. Use clear and meaningful section IDs and class names so JavaScript can target them.
+      3. Add placeholders for product cards, a search input, filter buttons,
+         and a cart list.
+      4. Include a product modal or detail area for showing extra info.
+      5. Make the page semantic and accessible with buttons, headings,
+         labels, and clean layout containers.
+
+      Suggested layout:
+      - header: logo, nav links, search, cart count
+      - hero: banner with call-to-action
+      - filters: category buttons and sorting controls
+      - main: product grid container
+      - aside: cart summary
+      - modal: product detail popup
+      - footer: quick links and copyright
+
+      Team split:
+      - HTML member: page structure and semantic markup
+      - CSS member: design, responsiveness, spacing, product card styles
+      - JS member: fetch data and render cards
+      - JS/interaction member: cart logic, search, filters, modal actions
+
+      Minimum HTML containers to include:
+      - <header>
+      - <nav>
+      - <section id="hero">
+      - <section id="filters">
+      - <main id="product-container">
+      - <aside id="cart">
+      - <div id="product-modal">
+      - <footer>
+
+      Important notes:
+      - Do not hardcode all data into HTML.
+      - Keep the structure flexible so JavaScript can populate the page.
+      - Use generic placeholders like product-card and cart-item.
+    -->
+
+    <header class="header">
+      <nav class="navbar">
+        <div class="brand">FakeStore</div>
+        <div class="nav-links">
+          <!-- Add home, shop, categories, contact links -->
+        </div>
+        <div class="header-actions">
+          <!-- Add search input and cart button -->
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <!-- Add banner text and CTA button -->
+      </section>
+
+      <section id="filters" class="filters">
+        <!-- Add category buttons and sorting controls -->
+      </section>
+
+      <section class="products-section">
+        <h2>Our Products</h2>
+        <div id="product-container" class="product-grid">
+          <!-- JavaScript should inject product cards here -->
+        </div>
+      </section>
+    </main>
+
+    <aside id="cart" class="cart">
+      <h3>Your Cart</h3>
+      <div id="cart-items">
+        <!-- Cart items will be injected by JavaScript -->
+      </div>
+      <div id="cart-total">
+        <!-- Display total price -->
+      </div>
+    </aside>
+
+    <div id="product-modal" class="modal hidden">
+      <!-- Product modal content goes here -->
+    </div>
+
+    <footer class="footer">
+      <!-- Add footer links and quick store info -->
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

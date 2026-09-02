@@ -1,0 +1,122 @@
+/*
+  TEAM GUIDE: CSS FOR THE FAKE API STORE UI
+
+  Responsibilities:
+  1. Create a clean ecommerce look with a modern shopping layout.
+  2. Style the header, hero banner, filters, product cards, modal,
+     cart sidebar, and footer.
+  3. Make the layout responsive for mobile, tablet, and desktop.
+  4. Use spacing, color, shadows, and border radius to make the project look polished.
+
+  Design approach:
+  - Use a clean neutral palette with one accent color for buttons.
+  - Keep typography readable and consistent.
+  - Create a card-based layout for products.
+  - Add hover states for buttons and product cards.
+  - Ensure the layout looks good both with and without data loaded.
+
+  Suggested CSS sections:
+  - resets and global styles
+  - variables for colors and spacing
+  - layout for header and navbar
+  - hero banner styling
+  - filter controls
+  - product grid and product cards
+  - cart styling
+  - modal styling
+  - responsive media queries
+
+  Important notes:
+  - Do not write JavaScript logic inside CSS.
+  - Use classes for reusable components such as .btn, .card, .badge.
+  - Keep styles consistent across all sections.
+  - Make sure buttons and links provide clear hover and active states.
+
+  Recommended style rules:
+  - .header: sticky or simple top navigation bar
+  - .hero: large banner with CTA and background image
+  - .product-grid: grid layout for cards
+  - .product-card: box shadow, rounded corners, spacing
+  - .cart: sticky sidebar or fixed panel on larger screens
+  - .modal: centered overlay for product details
+  - @media queries: adjust layout at 768px, 1024px, and larger sizes
+
+  Team split:
+  - The CSS member should focus on visual design and responsive behavior.
+  - The HTML member should keep class names predictable.
+  - The JavaScript member should add content without needing major CSS rewrites.
+*/
+
+:root {
+  /*
+    Add design variables here:
+    --primary-color
+    --secondary-color
+    --background-color
+    --text-color
+    --card-bg
+    --border-color
+    --shadow
+    --radius
+  */
+}
+
+* {
+  /* Basic reset and box-sizing */
+}
+
+body {
+  /* Set the page background, font, spacing, and default text styles */
+}
+
+.header {
+  /* Style the top navigation bar */
+}
+
+.navbar {
+  /* Arrange brand, nav links, and actions */
+}
+
+.hero {
+  /* Style the promotional banner */
+}
+
+.filters {
+  /* Style category buttons and filter tools */
+}
+
+.product-grid {
+  /* Make the grid responsive for product cards */
+}
+
+.product-card {
+  /* Set card spacing, borders, shadows, and layout */
+}
+
+.product-card img {
+  /* Image sizing and rounding */
+}
+
+.btn {
+  /* Shared button styles */
+}
+
+.cart {
+  /* Style the cart sidebar */
+}
+
+.modal {
+  /* Hide/show modal overlay and center content */
+}
+
+.hidden {
+  /* Hidden state for modal and other UI elements */
+}
+
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+}
+
+@media (min-width: 769px) {
+  /* Desktop layout adjustments */
+}
