@@ -1,172 +1,316 @@
-# Git & GitHub Setup Guide
+# 🎵 NIOEE
 
-**Community Repository**
+NIOEE is a browser-based music player built with HTML, CSS and Vanilla JavaScript.
 
-https://github.com/BlockheaderWeb3-Community/frontend-cohort3
-
----
-
-# 1. First-Time Git Configuration
-
-If this is your first time using Git on your computer, configure your GitHub username and email.
-
-```bash
-git config --global user.name "YOUR_GITHUB_USERNAME"
-git config --global user.email "YOUR_GITHUB_EMAIL"
-```
-
-> **Note:** Make sure you replace both values with the same username and email address you use on GitHub.
-
-You can verify your configuration with:
-
-```bash
-git config --global --list
-```
+The project is inspired by modern music streaming applications while using an original NIOEE interface.
 
 ---
 
-# 2. Push an Existing Project to GitHub
+## 👥 Team Sections
 
-If you already have a project on your computer that has **not** been connected to GitHub yet, follow these steps.
+The project is divided into five main sections:
 
-### Step 1: Initialize Git
+| Section | Main File |
+|---|---|
+| Home | `home.js` / `home.css` |
+| Search | `search.js` / `search.css` |
+| Library | `library.js` / `library.css` |
+| Playlist | `playlist.js` / `playlist.css` |
+| Now Playing / Song | `player.js` / `player.css` |
 
-```bash
-git init
-```
+### Ownership
 
-### Step 2: Add all files
+Each team member should primarily work inside their assigned files.
 
-```bash
-git add .
-```
+Avoid modifying another member's feature files unless the team has agreed on it.
 
-### Step 3: Commit your project
+---
 
-```bash
-git commit -m "Initial commit"
-```
-
-### Step 4: Switch to the `main` branch
-
-```bash
-git branch -M main
-```
-
-### Step 5: Connect your project to the GitHub repository
-
-```bash
-git remote add origin https://github.com/BlockheaderWeb3-Community/frontend-cohort3.git
-```
-
-### Step 6: Push your code
-
-```bash
-git push -u origin main
-```
-
-If the push is successful, you'll see output similar to:
+## 📁 Project Structure
 
 ```text
-Enumerating objects...
-Counting objects...
-Writing objects...
-To https://github.com/BlockheaderWeb3-Community/frontend-cohort3.git
- * [new branch]      main -> main
-```
+NIOEE/
+├── index.html
+├── README.md
+├── .gitignore
+│
+├── css/
+│   ├── styles.css
+│   ├── home.css
+│   ├── search.css
+│   ├── library.css
+│   ├── playlist.css
+│   ├── player.css
+│   └── responsive.css
+│
+├── js/
+│   ├── app.js
+│   ├── home.js
+│   ├── search.js
+│   ├── library.js
+│   ├── playlist.js
+│   └── player.js
+│
+└── assets/
+    ├── audio/
+    └── images/
 
----
 
-# 3. Working on an Existing Repository
 
-Before starting work, always download the latest changes from GitHub.
 
-```bash
-git pull origin main
-```
 
-Check the current status of your repository:
 
-```bash
-git status --short --branch
-```
+    IMPORTANT READ
+    ⚠️ Shared Files
 
-After making changes:
+The following files affect the whole application:
 
-```bash
-git add .
-git commit -m "Describe your changes"
-git push origin main
-```
+index.html
+css/styles.css
+css/responsive.css
+js/app.js
+README.md
 
----
+Before making major changes to these files, communicate with the team.
 
-# 4. If Git Reports Unrelated Histories
+Avoid overwriting another team member's work.
 
-Occasionally, Git may report that the local repository and the remote repository have unrelated histories.
 
-In that case, run:
+🌿 Git & Team Workflow
 
-```bash
-git pull origin main --allow-unrelated-histories
-```
+1. Clone the project
+Clone the music branch:
 
-Resolve any merge conflicts if prompted, then commit and push again.
+git clone -b music https://github.com/BlockheaderWeb3-Community/frontend-cohort3.git
 
----
+Then enter the project:
+cd frontend-cohort3
 
-# 5. Create a Backup Branch (Optional)
 
-Before performing large merges or risky operations, it's a good idea to create a backup branch.
+2. Create your own branch
 
-```bash
-git branch backup-before-merge
-```
+Do NOT work directly on music.
 
----
+Use a feature branch:
 
-# Useful Commands
+git checkout -b feature/your-section
 
-View repository status:
+Examples:
 
-```bash
+git checkout -b feature/home
+git checkout -b feature/search
+git checkout -b feature/library
+git checkout -b feature/playlist
+git checkout -b feature/player
+
+
+3. Work only on your assigned section
+Examples:
+
+Home:
+js/home.js
+css/home.css
+
+Search:
+js/search.js
+css/search.css
+
+Library:
+js/library.js
+css/library.css
+
+Playlist:
+js/playlist.js
+css/playlist.css
+
+Now Playing:
+js/player.js
+css/player.css
+4. Save and check your work
+
+Before committing:
+
 git status
-```
 
-View current branch:
+Test the application in the browser and check the browser console for errors.
 
-```bash
-git branch
-```
 
-View commit history:
+5. Commit your work
 
-```bash
-git log --oneline
-```
+Add your changes:
 
-Fetch the latest changes from GitHub:
+git add .
 
-```bash
-git fetch
-```
+Create a meaningful commit:
 
-Pull the latest changes:
+git commit -m "Add player playback controls"
 
-```bash
-git pull origin main
-```
+Use clear commit messages describing what you actually changed.
 
-Push your commits:
 
-```bash
-git push origin main
-```
+6. Push your branch
 
----
+The first time:
 
-# Frontend Mentor Challenges
+git push -u origin feature/your-section
 
-Practice your frontend skills here:
+After that:
 
-https://www.frontendmentor.io/challenges
+git push
+
+
+7. Pull Request
+
+After your feature is ready:
+
+Go to GitHub.
+Open the repository.
+Create a Pull Request.
+Select your feature branch as the source.
+Select music as the target branch.
+Describe what you changed.
+Ask the team to review it before merging.
+🔄 Before Starting New Work
+
+Always make sure your local music branch is up to date.
+
+git checkout music
+git pull origin music
+
+Then return to your feature branch:
+
+git checkout feature/your-section
+
+If your feature branch needs the latest changes from music, coordinate with the team before merging them into your branch.
+
+🚫 Important Git Rules
+DO NOT:
+Push directly to music.
+Force push.
+Delete someone else's branch.
+Run git reset --hard unless you understand exactly what it does.
+Commit passwords, API keys or secret credentials.
+Overwrite another person's work.
+Change another person's feature without communication.
+DO:
+Work on your own branch.
+Make meaningful commits.
+Test before pushing.
+Communicate before changing shared files.
+Create Pull Requests for completed features.
+🧑‍💻 Coding Rules
+
+
+
+NIOEE uses:
+HTML5
+CSS3
+Vanilla JavaScript
+ES6+
+
+JavaScript must remain in .js files.
+
+Do not use inline JavaScript such as:
+
+onclick=""
+
+Use JavaScript event listeners instead.
+
+🎧 Music & API
+
+Music information will be supplied through the selected music API.
+
+The application should use API data for information such as:
+
+Track title
+Artist
+Album
+Artwork
+Search results
+Other available music metadata
+
+The exact API integration will be implemented and documented by the team.
+
+Do not commit API keys or secrets to GitHub.
+
+🎯 Required Core Features
+Play / Pause
+Previous / Next
+Track wrap-around
+Track information
+Cover artwork
+Progress bar
+Seeking
+Current time
+Total duration
+Volume control
+Mute / Unmute
+Playlist rendering
+Active track
+⭐ Stretch Features
+
+Targeted stretch features:
+
+Shuffle
+Repeat
+Search / Filter
+Local Storage
+Responsive Design
+
+Additional stretch features may be added if time allows.
+
+🧪 Testing
+
+Before submitting a feature, test:
+
+Desktop layout
+Mobile layout
+Buttons
+Search
+Track selection
+Audio playback
+Progress
+Volume
+API data
+Error states
+
+Check the browser console for JavaScript errors.
+
+📱 Responsive Design
+
+The application should work at:
+
+320px
+768px
+1200px
+
+Responsive changes should be coordinated because responsive.css is a shared file.
+
+📦 Assets
+
+Place approved project assets inside:
+
+assets/audio/
+assets/images/
+
+Only use audio that is permitted by the assignment/API terms.
+
+🚀 Project Status
+
+🚧 NIOEE is currently under development.
+
+Team Members
+NOAH
+ISAAC
+OLUMIDE
+ELIJAH
+ENOCH
+
+Deployment
+
+Final deployed URL:
+To be added
+Demo
+
+Final screen recording:
+To be added
