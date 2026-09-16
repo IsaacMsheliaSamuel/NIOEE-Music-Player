@@ -1,2 +1,177 @@
 /* Home UI Screen Styles */
 /* OWNER : NOAH MAZTAH */
+
+
+/* ========================= HOME PAGE ========================= */
+
+.home-page {
+    padding: 40px 50px 140px;
+}
+
+
+/* ========================= HOME HEADER ========================= */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.greeting p {
+    margin: 0 0 6px;
+    color: #a7a7a7;
+    font-size: 16px;
+}
+
+.greeting h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.header-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* ========================= SECTION HEADER ========================= */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.section-header a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.section-header a:hover {
+    color: #ffffff;
+}
+
+
+/* ========================= JUMP BACK IN ========================= */
+
+.jump-back-in {
+    margin-bottom: 45px;
+}
+
+.quick-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.quick-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background: #242424;
+    border-radius: 8px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.quick-card:hover {
+    background: #303030;
+    transform: translateY(-2px);
+}
+
+.quick-card img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.quick-card-info {
+    padding-right: 12px;
+}
+
+.quick-card-info h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.quick-card-info p {
+    margin: 0;
+    color: #a7a7a7;
+    font-size: 13px;
+}
+
+
+/* ========================= MUSIC GRIDS ========================= */
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+
+/* ========================= MUSIC CARD ========================= */
+
+.music-card {
+    padding: 16px;
+    background: #181818;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.music-card:hover {
+    background: #242424;
+    transform: translateY(-3px);
+}
+
+.music-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+.music-card h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.music-card p {
+    margin: 0;
+    color: #a7a7a7;
+    font-size: 14px;
+}
+
+
+/* ========================= HOME SECTIONS ========================= */
+
+.recently-played {
+    margin-bottom: 45px;
+}
+
+.made-for-you {
+    margin-bottom: 30px;
+}

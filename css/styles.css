@@ -89,3 +89,72 @@ body {
 [hidden] {
     display: none !important;
 }
+
+/* ========================= SIDEBAR ========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 30px 16px;
+    background: #181818;
+    color: #ffffff;
+}
+
+
+/* Logo */
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #ffffff;
+}
+
+
+/* Main Navigation */
+
+.main-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Navigation Links */
+
+.main-navigation .nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+
+/* Active Navigation Link */
+
+.main-navigation .nav-link.active {
+    background: #2f2f2f;
+}
+
+
+/* Hover */
+
+.main-navigation .nav-link:hover {
+    background: #252525;
+}
+
+
+/* Main Content */
+
+.main-content {
+    margin-left: 240px;
+}
