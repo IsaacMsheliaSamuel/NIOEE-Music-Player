@@ -1,6 +1,5 @@
 // NIOEE Playlist
 // Temporary test data
-// Replace these sources with approved royalty-free/API tracks later
 
 const playlist = [
     {

@@ -2,8 +2,7 @@
 // OWNER : NOAH MAZTAH
 
 
-// ========================= HOME DATA =========================
-
+//HOME DATA
 const jumpBackIn = [
     {
         title: "Afrobeats Mix",
@@ -96,8 +95,7 @@ const madeForYou = [
 ];
 
 
-// ========================= GET HOME CONTAINERS =========================
-
+//GET HOME CONTAINERS
 const jumpBackCards =
     document.querySelector("#jump-back-cards");
 
@@ -108,8 +106,7 @@ const madeForYouCards =
     document.querySelector("#made-for-you-cards");
 
 
-// ========================= CREATE QUICK CARD =========================
-
+//CREATE QUICK CARD
 const createQuickCard = (item) => {
 
     const track = playlist[item.trackIndex];
@@ -139,8 +136,7 @@ const createQuickCard = (item) => {
 };
 
 
-// ========================= CREATE MUSIC CARD =========================
-
+// CREATE MUSIC CARD
 const createMusicCard = (item) => {
 
     const track = playlist[item.trackIndex];
@@ -166,7 +162,7 @@ const createMusicCard = (item) => {
 };
 
 
-// ========================= RENDER QUICK CARDS =========================
+//RENDER QUICK CARDS
 
 const renderJumpBackIn = () => {
 
@@ -180,8 +176,7 @@ const renderJumpBackIn = () => {
 };
 
 
-// ========================= RENDER RECENTLY PLAYED =========================
-
+//RENDER RECENTLY PLAYED
 const renderRecentlyPlayed = () => {
 
     recentlyPlayed.forEach((item) => {
@@ -194,7 +189,7 @@ const renderRecentlyPlayed = () => {
 };
 
 
-// ========================= RENDER MADE FOR YOU =========================
+//RENDER MADE FOR YOU
 
 const renderMadeForYou = () => {
 
@@ -208,8 +203,7 @@ const renderMadeForYou = () => {
 };
 
 
-// ========================= PLAY HOME TRACK =========================
-
+//PLAY HOME TRACK
 const playHomeTrack = (trackIndex) => {
 
     if (
@@ -234,8 +228,7 @@ const playHomeTrack = (trackIndex) => {
 };
 
 
-// ========================= HOME CARD CLICK =========================
-
+//HOME CARD CLICK
 document.addEventListener("click", (event) => {
 
     const card =
@@ -253,8 +246,7 @@ document.addEventListener("click", (event) => {
 });
 
 
-// ========================= START HOME =========================
-
+//START HOME
 renderJumpBackIn();
 
 renderRecentlyPlayed();

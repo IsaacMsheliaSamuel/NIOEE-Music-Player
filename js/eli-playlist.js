@@ -2,8 +2,7 @@
 // OWNER : ELI
 
 
-// ========================= GET ELEMENTS =========================
-
+//GET ELEMENTS
 const playlistTabs =
     document.querySelectorAll("#playlist-page .tabs button");
 
@@ -11,8 +10,7 @@ const playlistSection =
     document.querySelector("#playlist-page");
 
 
-// ========================= CREATE DISPLAY AREA =========================
-
+//CREATE DISPLAY AREA 
 const playlistDisplay =
     document.createElement("div");
 
@@ -21,8 +19,7 @@ playlistDisplay.className = "playlist-display";
 playlistSection.appendChild(playlistDisplay);
 
 
-// ========================= SHUFFLE SONGS =========================
-
+//SHUFFLE SONGS
 const shuffleSongs = (songs) => {
 
     return [...songs].sort(() => Math.random() - 0.5);
@@ -30,8 +27,7 @@ const shuffleSongs = (songs) => {
 };
 
 
-// ========================= CREATE SONG CARD =========================
-
+//CREATE SONG CARD
 const createPlaylistSong = (track, trackIndex) => {
 
     const songCard =
@@ -56,7 +52,7 @@ const createPlaylistSong = (track, trackIndex) => {
 };
 
 
-// ========================= DISPLAY SONGS =========================
+//DISPLAY SONGS
 
 const displaySongs = (songs) => {
 
@@ -80,8 +76,7 @@ const displaySongs = (songs) => {
 };
 
 
-// ========================= FAVORITES =========================
-
+//FAVORITES
 const showFavorites = () => {
 
     displaySongs(playlist);
@@ -89,8 +84,7 @@ const showFavorites = () => {
 };
 
 
-// ========================= RECENTLY ADDED =========================
-
+//RECENTLY ADDED
 const showRecentlyAdded = () => {
 
     const randomSongs =
@@ -101,7 +95,7 @@ const showRecentlyAdded = () => {
 };
 
 
-// ========================= MOST PLAYED =========================
+//MOST PLAYED
 
 const showMostPlayed = () => {
 
@@ -113,7 +107,7 @@ const showMostPlayed = () => {
 };
 
 
-// ========================= TAB CLICK =========================
+//TAB CLICK
 
 playlistTabs.forEach((button, index) => {
 
@@ -145,7 +139,7 @@ playlistTabs.forEach((button, index) => {
 });
 
 
-// ========================= PLAY SONG =========================
+//PLAY SONG
 
 playlistDisplay.addEventListener("click", (event) => {
 
@@ -178,7 +172,7 @@ playlistDisplay.addEventListener("click", (event) => {
 });
 
 
-// ========================= DEFAULT VIEW =========================
+//DEFAULT VIEW
 
 if (playlistTabs.length > 0) {
 

@@ -128,7 +128,6 @@ The player uses the HTML5 Audio API.
 Important Player IDs
 
 When working with the player UI, do not randomly rename these IDs.
-
 Main Player
 #album-cover
 #song-title
