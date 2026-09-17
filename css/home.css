@@ -2,15 +2,14 @@
 /* OWNER : NOAH MAZTAH */
 
 
-/* ========================= HOME PAGE ========================= */
+/* HOME PAGE */
 
 .home-page {
     padding: 40px 50px 140px;
 }
 
 
-/* ========================= HOME HEADER ========================= */
-
+/* HOME HEADER */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -37,8 +36,7 @@
 }
 
 
-/* ========================= SECTION HEADER ========================= */
-
+/* SECTION HEADER */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -62,8 +60,7 @@
 }
 
 
-/* ========================= JUMP BACK IN ========================= */
-
+/* JUMP BACK IN */
 .jump-back-in {
     margin-bottom: 45px;
 }
@@ -117,8 +114,7 @@
 }
 
 
-/* ========================= MUSIC GRIDS ========================= */
-
+/* MUSIC GRIDS */
 .music-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -126,8 +122,7 @@
 }
 
 
-/* ========================= MUSIC CARD ========================= */
-
+/* MUSIC CARD */
 .music-card {
     padding: 16px;
     background: #181818;
@@ -166,7 +161,7 @@
 }
 
 
-/* ========================= HOME SECTIONS ========================= */
+/* HOME SECTIONS */
 
 .recently-played {
     margin-bottom: 45px;

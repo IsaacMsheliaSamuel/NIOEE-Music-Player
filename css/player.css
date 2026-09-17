@@ -2,7 +2,7 @@
 /* Owner: Isaac */
 
 
-/* ========================= NOW PLAYING ========================= */
+/* NOW PLAYING */
 
 .now-playing {
     min-height: 100vh;
@@ -222,7 +222,7 @@
 }
 
 
-/* ========================= MOBILE ========================= */
+/* MOBILE */
 @media (max-width: 768px) {
     .now-playing {
         padding: 30px 20px 120px;

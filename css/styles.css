@@ -1,7 +1,7 @@
 /* NIOEE Global Styles */
 /* OWNER : All Team Members */
 
-/* ========================= GLOBAL RESET ========================= */
+/*  GLOBAL RESET */
 * {
     box-sizing: border-box;
 }
@@ -20,7 +20,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ========================= APP PAGES ======================== */
+/* APP PAGES */
 .app-page {
     min-height: 100vh;
     padding: 40px 25px 120px;
@@ -39,7 +39,7 @@ body {
 }
 
 
-/* ========================= TEMPORARY NAVIGATION ====================== */
+/* TEMPORARY NAVIGATION */
 .test-navigation {
     display: flex;
     gap: 15px;
@@ -66,7 +66,7 @@ body {
     background: #333333;
 }
 
-/* ========================= TEST SONG LIST ========================= */
+/* TEST SONG LIST */
 .test-song-list {
     margin-top: 40px;
 }
@@ -80,18 +80,17 @@ body {
     margin-bottom: 10px;
 }
 
-/* ========================= PAGE BACK BUTTON ========================= */
+/* PAGE BACK BUTTON */
 .page-back-btn {
     margin-bottom: 30px;
 }
 
-/* ========================= HIDDEN PAGES ========================= */
+/* HIDDEN PAGES  */
 [hidden] {
     display: none !important;
 }
 
-/* ========================= SIDEBAR ========================= */
-
+/* SIDEBAR  */
 .sidebar {
     position: fixed;
     top: 0;
@@ -105,7 +104,6 @@ body {
 
 
 /* Logo */
-
 .logo {
     margin-bottom: 40px;
 }
@@ -117,7 +115,6 @@ body {
 
 
 /* Main Navigation */
-
 .main-navigation {
     display: flex;
     flex-direction: column;
@@ -126,7 +123,6 @@ body {
 
 
 /* Navigation Links */
-
 .main-navigation .nav-link {
     display: block;
     width: 100%;
@@ -140,21 +136,17 @@ body {
 
 
 /* Active Navigation Link */
-
 .main-navigation .nav-link.active {
     background: #2f2f2f;
 }
 
-
 /* Hover */
-
 .main-navigation .nav-link:hover {
     background: #252525;
 }
 
 
 /* Main Content */
-
 .main-content {
     margin-left: 240px;
 }

@@ -1,23 +1,20 @@
 /* Playlist UI screen CSS styles */
 /* FILE OWNER: ENOCH and (Any other team member can contribute on this file if you're done with your own work) */
 
-/* ========================= PLAYLIST PAGE ========================= */
-
+/*PLAYLIST PAGE */
 #playlist-page {
     padding: 40px 50px 140px;
 }
 
 
-/* ========================= PLAYLIST TITLE ========================= */
-
+/*PLAYLIST TITLE */
 #playlist-page h2 {
     margin: 0 0 30px;
     font-size: 28px;
 }
 
 
-/* ========================= PLAYLIST TABS ========================= */
-
+/*PLAYLIST TABS */
 #playlist-page .top {
     margin-bottom: 30px;
 }
@@ -52,15 +49,13 @@
 
 
 /* Active tab */
-
 #playlist-page .tabs button.active {
     background: #ffffff;
     color: #121212;
 }
 
 
-/* ========================= SONG DISPLAY ========================= */
-
+/*SONG DISPLAY*/
 .playlist-display {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -68,17 +63,12 @@
 }
 
 
-/* ========================= SONG CARD ========================= */
-
+/*  SONG CARD */
 .playlist-song {
     padding: 16px;
-
     background: #181818;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     transition:
         background 0.2s ease,
         transform 0.2s ease;
@@ -91,7 +81,6 @@
 
 
 /* Song image */
-
 .playlist-song img {
     display: block;
 
@@ -107,7 +96,6 @@
 
 
 /* Song title */
-
 .playlist-song h3 {
     margin: 0 0 6px;
 
@@ -116,7 +104,6 @@
 
 
 /* Artist */
-
 .playlist-song p {
     margin: 0;
 
@@ -126,16 +113,14 @@
 }
 
 
-/* ========================= EMPTY STATE ========================= */
-
+/* EMPTY STATE  */
 .playlist-empty {
     color: #a7a7a7;
     font-size: 15px;
 }
 
 
-/* ========================= RESPONSIVE ========================= */
-
+/* RESPONSIVE */
 @media (max-width: 1000px) {
 
     .playlist-display {
