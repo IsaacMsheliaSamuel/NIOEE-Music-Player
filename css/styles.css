@@ -39,46 +39,7 @@ body {
 }
 
 
-/* TEMPORARY NAVIGATION */
-.test-navigation {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
 
-.test-navigation button,
-.test-song-list button,
-.app-page > button:not(.back-btn),
-.page-back-btn {
-    background: #242424;
-    border: none;
-    color: #ffffff;
-    padding: 12px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.test-navigation button:hover,
-.test-song-list button:hover,
-.app-page > button:not(.back-btn):hover,
-.page-back-btn:hover {
-    background: #333333;
-}
-
-/* TEST SONG LIST */
-.test-song-list {
-    margin-top: 40px;
-}
-
-.test-song-list h3 {
-    margin-bottom: 15px;
-}
-
-.test-song-list button {
-    display: block;
-    margin-bottom: 10px;
-}
 
 /* PAGE BACK BUTTON */
 .page-back-btn {
